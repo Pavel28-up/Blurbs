@@ -1,0 +1,15 @@
+.vs
+*.log
+*.bin
+/Library/
+/Temp/
+/Assets/VSCode
+/out
+.vscode/
+*.sln
+*.userprefs
+*.csproj
+.idea
+*.iml
+.DotSettings.user
+.fake
