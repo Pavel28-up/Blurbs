@@ -6,6 +6,7 @@ using TMPro;
 public class GameControl : MonoBehaviour
 {
     public GameObject[] _puzzle; // оригинальный массив
+    public InterstitialAds ads;
 
 	// стартовая позиция для первого элемента
 	public float startPosX = -6f;
@@ -50,6 +51,7 @@ public class GameControl : MonoBehaviour
 		click = 0;
 		RandomPuzzle();
 		Debug.Log("New Game");
+        // ads.ShowAd();
 	}
 
 	public void ExitGame()

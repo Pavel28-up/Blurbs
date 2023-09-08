@@ -14,6 +14,7 @@ public class Puzzle : MonoBehaviour
 		GameControl.grid[x,y] = null;
 		GameControl.click++;
 		GameControl.GameFinish();
+        GameEvents.Instance.InvokeVishkasMovementEvent();
 	}
 
 	void OnMouseDown()

@@ -201,6 +201,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75090392}
   m_CullTransparentMesh: 1
+--- !u!1 &379642210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379642214}
+  - component: {fileID: 379642213}
+  - component: {fileID: 379642212}
+  - component: {fileID: 379642211}
+  - component: {fileID: 379642215}
+  m_Layer: 0
+  m_Name: Ads
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &379642211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379642210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d958b4ece6c22164696536639b51ae12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdID: Interstitial_Android
+  iOSAdID: Interstitial_iOS
+--- !u!114 &379642212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379642210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb3fec5f140107498702f16154afb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bannerPosition: 0
+  androidID: Banner_Android
+  iOSID: Banner_iOS
+--- !u!114 &379642213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379642210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52ea75db589b8748a82660c903a22fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidGameID: 5408897
+  iOSGameID: 5408896
+  testMode: 1
+--- !u!4 &379642214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379642210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7571433, y: 0.92236036, z: -0.01800007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &379642215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379642210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d025852909bf4b74ba5e47c6b1ba39c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonShowAd: {fileID: 662010397}
+  androidAdID: Rewarded_Android
+  iOSAdID: Rewarded_iOS
+  adID: 
 --- !u!1 &402118423
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,9 +599,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1274268877}
-        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
-        m_MethodName: StartNewGame
+      - m_Target: {fileID: 896283871}
+        m_TargetAssemblyTypeName: InterstitialAds, Assembly-CSharp
+        m_MethodName: LoadAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 896283871}
+        m_TargetAssemblyTypeName: InterstitialAds, Assembly-CSharp
+        m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -566,6 +673,10 @@ GameObject:
   - component: {fileID: 896283869}
   - component: {fileID: 896283868}
   - component: {fileID: 896283867}
+  - component: {fileID: 896283870}
+  - component: {fileID: 896283874}
+  - component: {fileID: 896283873}
+  - component: {fileID: 896283871}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -658,6 +769,146 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!82 &896283870
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896283865}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c6dfd44b2ad810c4db3afd5b137daa56, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &896283871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896283865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d958b4ece6c22164696536639b51ae12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdID: Interstitial_Android
+  iOSAdID: Interstitial_iOS
+--- !u!114 &896283873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896283865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb3fec5f140107498702f16154afb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bannerPosition: 0
+  androidID: Banner_Android
+  iOSID: Banner_iOS
+--- !u!114 &896283874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896283865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52ea75db589b8748a82660c903a22fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidGameID: 5408897
+  iOSGameID: 5408896
+  testMode: 0
 --- !u!1 &903683820
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +920,7 @@ GameObject:
   - component: {fileID: 903683823}
   - component: {fileID: 903683822}
   - component: {fileID: 903683821}
+  - component: {fileID: 903683824}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -726,6 +978,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903683824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903683820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f5da3d70ed1fa4c80adb1ad1dfa152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1007252860
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,8 +1076,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1274268878}
   - component: {fileID: 1274268877}
+  - component: {fileID: 1274268879}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,6 +1112,7 @@ MonoBehaviour:
   - {fileID: 5862307128328312729, guid: 82cfae957868e074fb9646303b28e9ac, type: 3}
   - {fileID: 6704900520687591351, guid: 218af92952394d84db6c054f302a775c, type: 3}
   - {fileID: 5142841193666729653, guid: b860587e13c88a04fba245a2bdb2f4e7, type: 3}
+  ads: {fileID: 0}
   startPosX: -1
   startPosY: 4
   outX: 1.6
@@ -867,6 +1133,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274268879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274268876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6eab7e21f3b9742902c1ddf2b622a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vishkasMovementAudioClip: {fileID: 8300000, guid: cb98129b45d479f479d1a68506b5dc7d, type: 3}
 --- !u!1 &1445900341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1713,7 @@ MonoBehaviour:
   - {fileID: 4316155996285528377, guid: 2ed56f206ecca8944bb7973e061d4d0a, type: 3}
   - {fileID: 3907084928577494152, guid: ab6390173d1e9554596ca3f0c6b3ff17, type: 3}
   - {fileID: 4174613475876542109, guid: d28ec2eb5ad43894fafbd8f175df967a, type: 3}
+  ads: {fileID: 0}
   startPosX: -6
   startPosY: 6
   outX: 1.1
