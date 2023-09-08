@@ -6,7 +6,6 @@ using TMPro;
 public class GameControl : MonoBehaviour
 {
     public GameObject[] _puzzle; // оригинальный массив
-    public InterstitialAds ads;
 
 	// стартовая позиция для первого элемента
 	public float startPosX = -6f;
@@ -23,11 +22,14 @@ public class GameControl : MonoBehaviour
 	public static Vector3[,] position;
 	private GameObject[] puzzleRandom;
 	public static bool win;
+	public int numAds = 0;
+	public int countAds;
 	
 	void Start () 
 	{
+		// PlayerPrefs.SetInt("AdsCount", 0);
 		puzzleRandom = new GameObject[_puzzle.Length];
-
+		numAds = PlayerPrefs.GetInt("AdsCount");
 		// заполнение массива позиций клеток
 		float posXreset = startPosX;
 		position = new Vector3[4,4];
@@ -42,11 +44,24 @@ public class GameControl : MonoBehaviour
 			startPosX = posXreset;
 		}
 
+		
 		if(!PlayerPrefs.HasKey("Puzzle")) StartNewGame(); else Load();
+	}
+
+	void AdsCountShow()
+	{
+		if (numAds == countAds)
+		{
+			InterstitialAds.Instantiate.ShowAd();
+			numAds = 0;
+		}
 	}
 
 	public void StartNewGame()
 	{
+		AdsCountShow();
+		numAds++;
+		PlayerPrefs.SetInt("AdsCount", numAds);
 		win = false;
 		click = 0;
 		RandomPuzzle();
