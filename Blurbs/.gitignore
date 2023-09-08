@@ -13,4 +13,5 @@
 *.iml
 .DotSettings.user
 .fake
-/key
+/key.text
+/ser.keystore
